@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+        <form method="POST">
+            <p>{{ message }}</p>
+            {% csrf_token %}
+            <input type="text" name="header_ip" placeholder="192.168.0.2">
+            <input type="number" name="header_port" placeholder="6543">
+            <input type="submit" value="Request data.json from Header">
+        </form>
+{% endblock %}
+
