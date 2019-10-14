@@ -5,4 +5,4 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['192.168.90.65', '192.168.0.2']
 
-STATIC_ROOT = "/var/www/django/kos/media"
+STATIC_ROOT = "/var/www/django/kos/static/"
