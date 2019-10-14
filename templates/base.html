@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}KOS imitator</title>
+    <style>
+        *{margin:0; padding:0}
+
+        html{
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main{
+            flex-grow: 1;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<header><h1>{{ page_title }}</h1></header>
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    <footer></footer>
+</body>
+{% block scripts %}{% endblock %}
+</html>

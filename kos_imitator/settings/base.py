@@ -1,6 +1,6 @@
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STAT_DIR = os.path.join(BASE_DIR, "static")
 MEDI_DIR = os.path.join(BASE_DIR, "media")
 TEMPL_DIR = os.path.join(BASE_DIR, "templates")

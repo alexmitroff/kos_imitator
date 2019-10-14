@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main %}
+        <form onsubmit="return sendFile(event);">
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    async function sendFile(event){
+        console.log(event.target);
+        event.preventDefault();
+        let data = new FormData(event.target);
+        let query = await fetch("{% url 'import' %}", {
+            method: 'POST',
+            body: data
+          }).then(function (response){
+            return response.json();
+        }).catch(function ( error ){
+            console.log(error);
+        });
+    }
+</script>
+{% endblock %}
