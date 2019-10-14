@@ -6,7 +6,7 @@ from users.models import User, StudyGroup
 class UserAdmin(admin.ModelAdmin):
     list_filter = ('studygroup',)
     search_fields = ('first_name', 'last_name', 'username', 'studygroup__name')
-    list_display = ('fullname', 'email', 'rank', 'studygroup')
+    list_display = ('__str__', 'email', 'rank', 'studygroup')
 
     def studygroup(self, obj):
         if obj.studygroup:

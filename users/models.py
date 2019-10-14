@@ -20,7 +20,7 @@ class User(AbstractUser):
 
     @property
     def fullname(self):
-        return f'{self.username}: {self.last_name} {self.first_name}'
+        return f'{self.last_name} {self.first_name}'
 
     def __str__(self):
-        return self.fullname
+        return f'{self.username}: {self.fullname}'
