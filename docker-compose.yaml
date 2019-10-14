@@ -1,0 +1,30 @@
+version: '3'
+
+volumes:
+  dbdata:
+  media_files:
+  logs:
+
+services:
+  postgres:
+    image: "postgres:11"
+    container_name: "kos_postgres"
+    ports:
+      - "54320:5432"
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+
+  django:
+    container_name: "kos_django"
+    build:
+      context: .
+      dockerfile: docker/kos_django/Dockerfile
+    command: bash docker/kos_django/dev-run.bash
+    volumes:
+      - .:/code
+      - logs:/var/www/django/kos/logs
+      - media_files:/var/www/django/kos/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres

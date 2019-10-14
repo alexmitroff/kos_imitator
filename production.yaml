@@ -1,0 +1,48 @@
+version: '3'
+
+volumes:
+  dbdata:
+  media_files:
+  static_files:
+  log_files:
+
+services:
+  postgres:
+    image: "postgres:11"
+    container_name: "kos_postgres"
+    ports:
+      - "54320:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  django:
+    container_name: "kos_django"
+    build:
+      context: .
+      dockerfile: ./docker/kos_django/Dockerfile
+    environment:
+      - DJANGO_SETTINGS_MODULE=kos_imitator.settings.prod
+    command: bash ./docker/kos_django/prod-run.bash
+    volumes:
+      - .:/code
+      - media_files:/var/www/django/kos/media
+      - static_files:/var/www/django/kos/static
+      - log_files:/var/www/django/kos/logs
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+
+  nginx:
+    container_name: "kos_nginx"
+    build:
+      context: .
+      dockerfile: ./docker/acnl_nginx/Dockerfile
+    volumes:
+      - media_files:/var/www/django/kos/media
+      - static_files:/var/www/django/kos/static
+      - log_files:/var/www/django/kos/logs
+    ports:
+      - 80:80
+    depends_on:
+      - django
