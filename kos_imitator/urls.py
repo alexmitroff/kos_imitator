@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from users.api_views import Export
+from users.api.views import Export
 
 urlpatterns = [
     path('admin/', admin.site.urls),
