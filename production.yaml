@@ -37,7 +37,7 @@ services:
     container_name: "kos_nginx"
     build:
       context: .
-      dockerfile: ./docker/acnl_nginx/Dockerfile
+      dockerfile: ./docker/kos_nginx/Dockerfile
     volumes:
       - media_files:/var/www/django/kos/media
       - static_files:/var/www/django/kos/static
