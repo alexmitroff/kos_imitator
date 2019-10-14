@@ -12,7 +12,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party apps
     'rest_framework',
+
+    # Custom apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +61,7 @@ DATABASES = {
         }
 }
 
+AUTH_USER_MODEL = 'users.User'
 AUTH_PASSWORD_VALIDATORS = [
     # {
     #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
