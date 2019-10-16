@@ -188,4 +188,5 @@ tags
 
 .idea/
 prod.py
+venv/
 # End of https://www.gitignore.io/api/vim,python,django
