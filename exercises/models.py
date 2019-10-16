@@ -21,7 +21,7 @@ class Mark(models.Model):
     comment = models.TextField('comment', blank=True, null=True)
 
     def __str__(self):
-        return f'{self.exercise.title}: {self.user.fullname}'
+        return f'{self.exercise.title}: {self.user.last_name} {self.user.first_name}'
 
     class Meta:
         verbose_name = 'mark'
