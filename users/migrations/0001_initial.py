@@ -18,11 +18,11 @@ class Migration(migrations.Migration):
             name='StudyGroup',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=512, verbose_name='имя')),
+                ('name', models.CharField(max_length=512, verbose_name='name')),
             ],
             options={
-                'verbose_name': 'учебная группа',
-                'verbose_name_plural': 'учебные группы',
+                'verbose_name': 'study group',
+                'verbose_name_plural': 'study groups',
                 'db_table': 'users__studygroup',
             },
         ),
@@ -30,13 +30,13 @@ class Migration(migrations.Migration):
             name='StudyProfile',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('rank', models.CharField(blank=True, max_length=512, null=True, verbose_name='ранг')),
+                ('rank', models.CharField(blank=True, max_length=512, null=True, verbose_name='rank')),
                 ('studygroup', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='group', to='users.StudyGroup')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'verbose_name': 'учебный профиль',
-                'verbose_name_plural': 'учебные профиля',
+                'verbose_name': 'study profile',
+                'verbose_name_plural': 'study profiles',
                 'db_table': 'users__studyprofile',
             },
         ),

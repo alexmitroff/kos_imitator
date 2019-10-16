@@ -18,27 +18,27 @@ class Migration(migrations.Migration):
             name='Exercise',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=512, verbose_name='название')),
+                ('title', models.CharField(max_length=512, verbose_name='title')),
             ],
             options={
-                'verbose_name': 'упражнение',
-                'verbose_name_plural': 'упражнения',
+                'verbose_name': 'exercise',
+                'verbose_name_plural': 'exercises',
             },
         ),
         migrations.CreateModel(
             name='Mark',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('user_role', models.CharField(max_length=128, verbose_name='роль')),
-                ('date', models.DateTimeField(verbose_name='дата')),
-                ('value', models.PositiveIntegerField(verbose_name='оценка')),
-                ('comment', models.TextField(blank=True, null=True, verbose_name='комментарий')),
-                ('exercise', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='exercises.Exercise', verbose_name='упражнение')),
+                ('user_role', models.CharField(max_length=128, verbose_name='role')),
+                ('date', models.DateTimeField(verbose_name='date')),
+                ('value', models.PositiveIntegerField(verbose_name='mark')),
+                ('comment', models.TextField(blank=True, null=True, verbose_name='comment')),
+                ('exercise', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='exercises.Exercise', verbose_name='exercise')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='user', to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                'verbose_name': 'оценка',
-                'verbose_name_plural': 'оценки',
+                'verbose_name': 'mark',
+                'verbose_name_plural': 'marks',
             },
         ),
     ]
