@@ -14,7 +14,7 @@ class Exercise(models.Model):
 
 class Mark(models.Model):
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='user')
     user_role = models.CharField('role', max_length=128)
     date = models.DateTimeField('date')
     value = models.PositiveIntegerField('mark')
