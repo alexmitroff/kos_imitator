@@ -1,5 +1,18 @@
 # KOS imitator based on django
 
+## Add production settings
+kos_imitator/settings/**prod.py**
+```python
+from kos_imitator.settings.base import *
+
+SECRET_KEY = '52h#0@ivjh-jl+*)6^z2r6kfym9eqp-z&&ivwwslm@=mou6#sm'
+DEBUG = False
+
+ALLOWED_HOSTS = ['192.168.90.65']
+
+STATIC_ROOT = "/var/www/django/kos/static/"
+```
+
 ## Init database
 
 ```bash

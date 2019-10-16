@@ -187,4 +187,5 @@ tags
 [._]*.un~
 
 .idea/
+prod.py
 # End of https://www.gitignore.io/api/vim,python,django
