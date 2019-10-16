@@ -4,6 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 STAT_DIR = os.path.join(BASE_DIR, "static")
 MEDI_DIR = os.path.join(BASE_DIR, "media")
 TEMPL_DIR = os.path.join(BASE_DIR, "templates")
+LOCALE_DIR = os.path.join(BASE_DIR, "locale")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,8 +18,8 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Custom apps
-    'exercises',
-    'users',
+    'exercises.apps.ExercisesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -82,9 +83,11 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+LOCALE_PATHS = (LOCALE_DIR,)
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (STAT_DIR,)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = "/var/www/django/kos/media"
+

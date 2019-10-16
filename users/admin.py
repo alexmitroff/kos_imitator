@@ -1,7 +1,9 @@
 from django.contrib import admin
-from users.models import StudyProfile, StudyGroup
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
+from django.utils.translation import gettext as _
+
+from users.models import StudyProfile, StudyGroup
 
 
 @admin.register(StudyGroup)
@@ -18,18 +20,24 @@ class AdminUser(BaseUserAdmin):
     list_display = ('fullname', 'email', 'rank', 'studygroup', 'is_staff')
     fieldsets = (
                 ( None, {'fields': ('username', 'password')}),
-                ('permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
-                ('personal info', {'fields': ('first_name', 'last_name')}),
+                (_('permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser')}),
+                (_('personal info'), {'fields': ('first_name', 'last_name')}),
             )
 
     def fullname(self, obj):
         return f'{obj.username}: {obj.last_name} {obj.first_name}'
+    fullname.allow_tags = True
+    fullname.short_description = _("full name")
 
     def rank(self, obj):
         return obj.studyprofile.rank
+    rank.allow_tags = True
+    rank.short_description = _("rank")
 
     def studygroup(self, obj):
         return obj.studyprofile.studygroup.name
+    studygroup.allow_tags = True
+    studygroup.short_description = _("study group")
 
     def add_view(self, *args, **kwargs):
         self.inlines = []

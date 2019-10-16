@@ -1,6 +1,6 @@
 from django.contrib import admin
 from exercises.models import Exercise, Mark
-
+from django.utils.translation import gettext as _
 
 admin.site.register(Exercise)
 
@@ -19,6 +19,10 @@ class MarkAdmin(admin.ModelAdmin):
         if obj.user.studyprofile.studygroup:
             return obj.user.studyprofile.studygroup.name
         return '-'
+    study_group.allow_tags = True
+    study_group.short_description = _("study group")
 
     def user_fullname(self, obj):
         return f'{obj.user.last_name} {obj.user.first_name}'
+    user_fullname.allow_tags = True
+    user_fullname.short_description = _("full name")
