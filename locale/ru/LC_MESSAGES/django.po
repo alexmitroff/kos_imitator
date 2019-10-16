@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-16 16:40+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: exercises/admin.py:23 users/admin.py:40 users/models.py:15
+msgid "study group"
+msgstr "учебная группа"
+
+#: exercises/admin.py:28 users/admin.py:30
+msgid "full name"
+msgstr "полное имя"
+
+#: exercises/apps.py:7 exercises/models.py:13
+msgid "exercises"
+msgstr "упражнения"
+
+#: exercises/models.py:6
+msgid "title"
+msgstr "название"
+
+#: exercises/models.py:12 exercises/models.py:17
+msgid "exercise"
+msgstr "упражнение"
+
+#: exercises/models.py:19
+msgid "role"
+msgstr "роль"
+
+#: exercises/models.py:20
+msgid "date"
+msgstr "дата"
+
+#: exercises/models.py:21 exercises/models.py:28
+msgid "mark"
+msgstr "оценка"
+
+#: exercises/models.py:22
+msgid "comment"
+msgstr "комментарий"
+
+#: exercises/models.py:29
+msgid "marks"
+msgstr "оценки"
+
+#: users/admin.py:23
+msgid "permissions"
+msgstr "права"
+
+#: users/admin.py:24
+msgid "personal info"
+msgstr "персональная информация"
+
+#: users/admin.py:35 users/models.py:22
+msgid "rank"
+msgstr "ранг"
+
+#: users/apps.py:7
+msgid "study"
+msgstr "учёба"
+
+#: users/models.py:9
+msgid "name"
+msgstr "имя"
+
+#: users/models.py:16
+msgid "study groups"
+msgstr "учебные группы"
+
+#: users/models.py:26
+msgid "study profile"
+msgstr "учебный профиль"
+
+#: users/models.py:27
+msgid "study profiles"
+msgstr "учебные профиля"
