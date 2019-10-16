@@ -11,7 +11,7 @@ services:
     image: "postgres:11"
     container_name: "kos_postgres"
     ports:
-      - "54320:5432"
+      - "54321:5432"
     volumes:
       - dbdata:/var/lib/postgresql/data
 
@@ -29,7 +29,7 @@ services:
       - static_files:/var/www/django/kos/static
       - log_files:/var/www/django/kos/logs
     ports:
-      - 8000:8000
+      - 8001:8000
     depends_on:
       - postgres
 
@@ -43,6 +43,6 @@ services:
       - static_files:/var/www/django/kos/static
       - log_files:/var/www/django/kos/logs
     ports:
-      - 80:80
+      - 81:80
     depends_on:
       - django
