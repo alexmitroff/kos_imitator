@@ -29,7 +29,7 @@ services:
       - static_files:/var/www/django/kos/static
       - log_files:/var/www/django/kos/logs
     ports:
-      - 8001:8000
+      - 8001:8001
     depends_on:
       - postgres
 
@@ -43,6 +43,6 @@ services:
       - static_files:/var/www/django/kos/static
       - log_files:/var/www/django/kos/logs
     ports:
-      - 81:80
+      - 80:81
     depends_on:
       - django
