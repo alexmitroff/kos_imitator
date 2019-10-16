@@ -1,13 +1,13 @@
 import json
 from datetime import datetime as dt
 
+from django.contrib.auth.models import User
 from rest_framework.parsers import MultiPartParser, FileUploadParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from exercises.api.authentication import CsrfExemptSessionAuthentication
 from exercises.models import Exercise, Mark
-from users.models import User
 
 
 class Import(APIView):
