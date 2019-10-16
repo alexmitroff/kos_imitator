@@ -7,7 +7,7 @@ from users.models import StudyGroup, User
 class Export(APIView):
 
     def get(self, request):
-        students = User.objects.all().select_related('studygroup')
+        students = User.objects.filter(is_staff=False, is_superuser=False, is_active=True)
         groups = StudyGroup.objects.all()
         data = {
           "students": SerializerUser(students, many=True).data,
