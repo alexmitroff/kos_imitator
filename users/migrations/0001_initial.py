@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             name='StudyGroup',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=512, verbose_name='name')),
+                ('name', models.CharField(max_length=512, verbose_name='имя')),
             ],
             options={
                 'verbose_name': 'study group',
