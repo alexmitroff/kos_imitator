@@ -35,7 +35,9 @@ class AdminUser(BaseUserAdmin):
     rank.short_description = _("rank")
 
     def studygroup(self, obj):
-        return obj.studyprofile.studygroup.name
+        if obj.studyprofile.studygroup:
+            return obj.studyprofile.studygroup.name
+        return '-'
     studygroup.allow_tags = True
     studygroup.short_description = _("study group")
 
