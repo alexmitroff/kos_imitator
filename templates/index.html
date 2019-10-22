@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<ul>
+<!--    <p><b>Страницы:</b></p>-->
+    <li><a href="{% url 'users:list' %}">Личный состав</a></li>
+    <li><a href="{% url 'users:groups' %}">Подразделения</a></li>
+<!--    <p><b>API:</b></p>-->
+<!--    <li><a href="{% url 'export' %}">{% url 'export' %}</a></li>-->
+<!--    <li><a href="{% url 'import' %}">{% url 'import' %}</a></li>-->
+<!--    <p><b>Запрос данных у Header</b></p>-->
+<!--    <li><a href="{% url 'import-request' %}">Header</a></li>-->
+</ul>
+{% endblock %}

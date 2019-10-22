@@ -15,6 +15,7 @@ class Import(APIView):
     parser_classes = (MultiPartParser, FileUploadParser)
 
     def post(self, request):
+        print(request)
         json_file = request.data.get('file')
         if not json_file:
             return Response({'message': 'server did not receive file'}, status=400)
@@ -30,9 +31,9 @@ class Import(APIView):
             training_title = training['training_title']
             training_date = dt.fromtimestamp(training['training_date'])
             user_id = training['user_id']
-            user_role = training['user_role']
+            user_role = training.get('user_role', '-')
             user_mark = training['user_mark']
-            comment = training['comment']
+            comment = training.get('comment', '-')
 
             exercise, e_created = Exercise.objects.get_or_create(id=training_id, defaults={'title': training_title})
 
@@ -50,7 +51,5 @@ class Import(APIView):
                                                             }
                                                             )
 
-
-
-
-        return Response({'starts': True}, status=200)
+        data = {'starts': True}
+        return Response(data, status=200, content_type='application/json')

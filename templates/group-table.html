@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>Наименование</th>
+    </tr>
+    {% for group in studygroups %}
+    <tr>
+        <td>{{ group.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

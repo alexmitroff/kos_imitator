@@ -91,3 +91,8 @@ STATICFILES_DIRS = (STAT_DIR,)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = "/var/www/django/kos/media"
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
+}
+

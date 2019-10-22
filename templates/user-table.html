@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>Звание</th>
+        <th>Фамилия, имя, отчество</th>
+        <th>Подразделение</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.studyprofile.rank }}</td>
+        <td>{{ user.last_name }} {{ user.first_name }}</td>
+        <td>{{ user.studyprofile.studygroup.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

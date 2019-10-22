@@ -19,7 +19,7 @@ class ImportData(ImportBase):
 
 
 class ImportRequest(ImportBase):
-    template = 'index.html'
+    template = 'import-request.html'
     page_title = 'Request import'
 
     def post(self, request):
@@ -36,3 +36,8 @@ class ImportRequest(ImportBase):
         send_udp_datagram(header_ip, header_port)
         context['message'] = 'UDP datagram was sent'
         return render(request, self.template, context)
+
+
+class Index(ImportBase):
+    template = 'index.html'
+    page_title = 'Иммитатор КОС ДУ'
