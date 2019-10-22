@@ -2,10 +2,13 @@
 
 {% block main %}
 <ul>
-<!--    <p><b>Страницы:</b></p>-->
+    <p><b>Меню:</b></p>
     <li><a href="{% url 'users:list' %}">Личный состав</a></li>
     <li><a href="{% url 'users:groups' %}">Подразделения</a></li>
-<!--    <p><b>API:</b></p>-->
+    <p><b>Администрирование:</b></p>
+    <li><a href="/moodle/">Редактирование данных</a></li>
+    <li><a href="/moodle/auth/user/add/">Добавить обучаемого</a></li>
+    <li><a href="/moodle/users/studygroup/add/">Добавить подразделение</a></li>
 <!--    <li><a href="{% url 'export' %}">{% url 'export' %}</a></li>-->
 <!--    <li><a href="{% url 'import' %}">{% url 'import' %}</a></li>-->
 <!--    <p><b>Запрос данных у Header</b></p>-->

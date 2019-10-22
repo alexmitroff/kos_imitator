@@ -40,4 +40,4 @@ class ImportRequest(ImportBase):
 
 class Index(ImportBase):
     template = 'index.html'
-    page_title = 'Иммитатор КОС ДУ'
+    page_title = 'Программный иммитатор КОС-УД'
