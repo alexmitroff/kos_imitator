@@ -1,14 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex">
     <title>{{ page_title }} | KOS imitator |</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Roboto/roboto.css' %}">
     <style>
         *{margin:0; padding:0}
 
+        a{
+            color:#417690;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
         html{
-            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+            font-family: "Roboto","Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
         }
 
         body{
@@ -17,7 +29,39 @@
             flex-direction: column;
         }
 
+        header{
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: #417690;
+            color: #ffc;
+            overflow: hidden;
+        }
+
+        header ul{
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        header ul li{
+            padding: 0 .5rem;
+            margin: 0;
+        }
+
+        header ul li a{
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #ffc;
+            text-decoration: none;
+        }
+
         main{
+            padding: 2rem;
             flex-grow: 1;
             display:flex;
             justify-content: center;
@@ -25,9 +69,11 @@
         }
 
         h1{
-            text-align: center;
-            padding-top: 2rem;
-            margin-bottom: 5rem;
+            padding: 0;
+            margin: 0 20px 0 0;
+            font-weight: 300;
+            font-size: 24px;
+            color: #f5dd5d;
         }
 
         form > p{
@@ -65,11 +111,22 @@
             margin-bottom: 1rem;
         }
 
+        main ul{
+            list-style-type: square;
+            padding-left:1rem;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <h1>{{ page_title }}</h1>
+
+        <ul>
+            <li><a href="{% url 'users:list' %}">Личный состав</a></li>
+            <li><a href="{% url 'users:groups' %}">Подразделения</a></li>
+            <li><a href="/moodle/">Редактирование данных</a></li>
+        </ul>
     </header>
     <main>
         {% block main %}{% endblock %}
