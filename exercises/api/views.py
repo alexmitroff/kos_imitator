@@ -27,12 +27,28 @@ class Import(APIView):
             return Response({'message': 'There are no training in file'}, status=400)
 
         for training in trainings:
-            training_id = training['training_id']
-            training_title = training['training_title']
-            training_date = dt.fromtimestamp(training['training_date'])
-            user_id = training['user_id']
+            training_id = training.get('training_id')
+            if not training_id:
+                Response({'message': 'training_id is missed'}, status=400)
+
+            training_title = training.get('training_title')
+            if not training_title:
+                Response({'message': 'training_title is missed'}, status=400)
+
+            training_date = training.get('training_date')
+            if not training_date:
+                Response({'message': 'training_date is missed'}, status=400)
+            training_date = dt.fromtimestamp(training_date)
+
+            user_id = training.get('user_id')
+            if not user_id:
+                Response({'message': 'user_id is missed'}, status=400)
+
+            user_mark = training.get('user_mark')
+            if not user_mark:
+                Response({'message': 'user_mark is missed'}, status=400)
+
             user_role = training.get('user_role', '-')
-            user_mark = training['user_mark']
             comment = training.get('comment', '-')
 
             exercise, e_created = Exercise.objects.get_or_create(id=training_id, defaults={'title': training_title})
