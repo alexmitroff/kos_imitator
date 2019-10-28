@@ -49,7 +49,7 @@ class ExercisesTable(View):
     def get(self, request):
         context = {
             'page_title': 'Таблица результатов',
-            'items': Mark.objects.all().order_by('date').values('exercise__title', 'value', 'date',
+            'items': Mark.objects.all().order_by('-date').values('exercise__title', 'value', 'date',
                                                                 'user_role', 'user__studyprofile__rank',
                                                                 'user__studyprofile__studygroup__name',
                                                                 'user__first_name', 'user__last_name')
