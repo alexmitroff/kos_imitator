@@ -2,10 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from users.api.views import Export
 from exercises.api.views import Import
-from exercises.views import ImportData, ImportRequest, Index
+from exercises.views import ImportData, ImportRequest, Index, ExercisesTable
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
+    path('exercises/', ExercisesTable.as_view(), name='exercises'),
     path('import/', ImportData.as_view(), name='import-test'),
     path('request/', ImportRequest.as_view(), name='import-request'),
     path('', include('users.urls')),

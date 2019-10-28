@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table>
+    <tr>
+        <th>Упражнение</th>
+        <th>Подразделение</th>
+        <th>Фамилия, имя, отчество</th>
+        <th>Звание</th>
+        <th>Роль</th>
+        <th>Оценка</th>
+        <th>Дата</th>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td>{{ item.exercise__title }}</td>
+        <td>{{ item.user__studyprofile__studygroup__name }}</td>
+        <td>{{ item.user__last_name }} {{ item.user__first_name }}</td>
+        <td>{{ item.user__studyprofile__rank }}</td>
+        <td>{{ item.user_role }}</td>
+        <td>{{ item.value }}</td>
+        <td>{{ item.date|date:"d.m.Y H:i" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
