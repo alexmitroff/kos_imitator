@@ -19,4 +19,5 @@ python manage.py compilemessages
 
 python manage.py collectstatic --noinput
 
-gunicorn -w 4 kos_imitator.wsgi -b 0.0.0.0:8001
+gunicorn -w 4 kos_imitator.wsgi -b 0.0.0.0:8001 --log-level debug
+

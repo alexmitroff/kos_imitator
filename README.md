@@ -43,3 +43,12 @@ docker exec -it kos_django python manage.py createsuperuser
 docker-compose down
 ```
 
+
+## Backup and restore db in docker
+```bash
+# backup
+docker exec -it kos_postgres pg_dump -U kos --dbname kos_db > kos_db_backup.YYYYMMDD.sql
+
+#restore
+cat ./kos_db_backup.YYYYMMDD.sql | docker exec -i kos_postgres psql -U kos -d kos_db
+```
