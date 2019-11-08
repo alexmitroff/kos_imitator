@@ -5,6 +5,8 @@ from django.utils.translation import gettext as _
 
 from users.models import StudyProfile, StudyGroup
 
+admin.site.site_header = 'Редактирование данных'
+
 
 @admin.register(StudyGroup)
 class AdminStudyGroup(admin.ModelAdmin):
