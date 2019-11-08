@@ -45,7 +45,7 @@ class Import(APIView):
             if not training_date:
                 print('training_date is missed')
                 Response({'message': 'training_date is missed'}, status=400)
-            training_date = dt.fromtimestamp(training_date)
+            training_date = dt.utcfromtimestamp(training_date)
 
             user_id = training.get('user_id')
             if not user_id:
